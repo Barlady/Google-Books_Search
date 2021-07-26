@@ -1,38 +1,108 @@
-.App {
+html, body {
+  margin:0;
+  padding:0;
+}
+.bgImage {
+  background: url("https://w-dog.ru/wallpapers/12/5/292456502243323.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  position: relative;
+  background-attachment: fixed;   
+}
+h1 {
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  padding-top: 150px;
+  color: #fff;
+  font-size: 50px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 700;
+}
+h3 h4 {
+  font-weight: 700;
+}
+.header-form {
+  position: relative;
+}
+.header-input {
+  display: flex;
+  justify-content: center; 
+}
+input::placeholder {
+  padding-left: 5px;
+  font-size: 1.2em;
+
+}
+.button-form {
+  border: 1px solid;
+}
+.header-form input {
+  display: block;
+  width: 500px;  
+  height: 35px; 
+  border: 1px solid;
+}
+.header-form-selects {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+.form-select {
+  margin-right: 30px;
+}
+select {
+  width: 175px;  
+  height: 25px;  
+}
+label {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+}
+.select-label {
+  margin-right: 5px;
+}
+.book-result {
+  color: #fff;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+main {
+  min-height: 90vh;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.page {
+  padding: 0;
+  margin: 0;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#app-footer {
+  text-align: center;
+  background-color: #f8f9fa;
+  padding: 5px 0;
+}
+.search-books {
   display: flex;
-  flex-direction: column;
+  justify-content: center;
+  flex-flow: column;
+  padding: 5em 50px;
+  align-items: center;
+}
+.button-load {
+  width: 150px;
+  height: 40px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-top: 70px;
+  margin-bottom: 40px;
+  background-color: #fff;
+}
+.button-text {
+  font-weight: 500;
+  text-transform: uppercase;
+  color: #007bff;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
