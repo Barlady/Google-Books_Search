@@ -10,7 +10,9 @@ export const requestBooks = (query, category, valueSort) => ({
   query,
   category,
   valueSort
+
 })
+
 
 export const receiveBooks = ({status, payload }) => ({
   type: RECEIVE_BOOKS,
@@ -20,16 +22,18 @@ export const receiveBooks = ({status, payload }) => ({
 
 
 
+
 export const getBooks = (query, category, valueSort) => {
   return function (dispatch) {
   	dispatch(requestBooks(query, category, valueSort));
     const API_KEY = 'AIzaSyClms_nJUPMfWJhn0APcGabaa9F7XyQvlM';
-  	const url = `https://www.googleapis.com/books/v1/volumes?q=${query}+subject:${category}&orderBy=${valueSort}&maxResults=30&key=${API_KEY}`
+  	const url = `https://www.googleapis.com/books/v1/volumes?q=${query}+subject:${category}&orderBy=${valueSort}&startIndex=0&maxResult=30&key=${API_KEY}`
   	return axios.get(url)
     .then(response => {
       dispatch(receiveBooks({
         status: 'success',
-        payload: response.data
+        payload: response.data,
+
       }))
     })
     .catch(error => {

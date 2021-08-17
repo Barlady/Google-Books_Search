@@ -3,6 +3,8 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import { getBooks} from '../actions';
 import debounce from 'lodash/debounce';
+import Button from 'react-bootstrap/Button';
+
 
 
 
@@ -39,18 +41,18 @@ const Search = ({ getBooks, query, category, valueSort}) => {
 
   return (
     <div className="search-books">
-      <form className="header-form" onSubmit={handleOnSubmit}>
+       <form className="header-form" onSubmit={handleOnSubmit}>
         <div className="header-input">
-          <input className="header-form-input" name="query" type="search" placeholder="Search..." defaultValue={query} />
-          <button className="button-form">
-            <i className="fa fa-search "></i>
-            </button>
+          <input className="header-form-input" name="query" type="search" defaultValue={query} />
+          <div className="button-search"><Button type="submit" variant="dark">
+        Search 
+            </Button></div>
         </div>
         <div className="header-form-selects">
           <div className="form-select">
         <label>
           <span className="select-label">Categories</span>
-        <select name = "category" defaultValue = {category}>
+        <select className="search-select" name = "category" defaultValue = {category}>
           {options.map(
             ({category, label}) => 
             <option key={category} value={category}>{label}</option>
@@ -61,7 +63,7 @@ const Search = ({ getBooks, query, category, valueSort}) => {
         <div className="form-sort">
         <label>
         <span className="select-label">Sorting by</span>
-        <select name = "valueSort" defaultValue = {valueSort} >
+        <select className="search-select" name = "valueSort" defaultValue = {valueSort} >
         {sortOptions.map(
             ({sort, label}) => 
             <option key={sort} value={sort}>{label}</option>
@@ -70,16 +72,17 @@ const Search = ({ getBooks, query, category, valueSort}) => {
         </label>
         </div>
         </div>
-        </form>
+        </form> 
     </div>
   )
 }
 
-const mapStateToProps = (state /*, ownProps*/) => {
+const mapStateToProps = (state) => {
   return {
     query: state.books.query,
     category: state.books.category,
     valueSort: state.books.valueSort
+
   }
 }
 

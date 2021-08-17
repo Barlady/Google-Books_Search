@@ -3,10 +3,11 @@ import { REQUEST_BOOKS, RECEIVE_BOOKS} from './actionTypes'
 const initalState = {
   query: '',
   category: '',
-  valueSort: 'relevance',
+  valueSort: '',
   isFetching: false,
   data: {},
   error: ''
+
 }
 
 export const books = (state = initalState, action) => {
@@ -25,6 +26,7 @@ export const books = (state = initalState, action) => {
         data: action.status === 'success' ? action.payload : initalState.data,
         error: action.status === 'error' ? action.payload : initalState.error
       })
+ 
     default:
       return state;
   }

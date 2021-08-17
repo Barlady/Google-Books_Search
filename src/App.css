@@ -41,8 +41,9 @@ input::placeholder {
 .header-form input {
   display: block;
   width: 500px;  
-  height: 35px; 
-  border: 1px solid;
+  height: 38px; 
+  border: 1px solid #fafafa;
+  border-radius: 5px; 
 }
 .header-form-selects {
   margin-top: 50px;
@@ -52,9 +53,14 @@ input::placeholder {
 .form-select {
   margin-right: 30px;
 }
+.search-select {
+  border: 1px solid #fafafa;
+  border-radius: 5px;
+}
 select {
   width: 175px;  
   height: 25px;  
+  background-color: #fff;
 }
 label {
   color: #fff;
@@ -64,6 +70,11 @@ label {
 .select-label {
   margin-right: 5px;
 }
+.button-search {
+  display: flex;
+  margin-left: 5px;
+}
+
 .book-result {
   color: #fff;
   font-family: 'Montserrat', sans-serif;
@@ -90,19 +101,6 @@ main {
   padding: 5em 50px;
   align-items: center;
 }
-.button-load {
-  width: 150px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 70px;
-  margin-bottom: 40px;
-  background-color: #fff;
-}
-.button-text {
-  font-weight: 500;
-  text-transform: uppercase;
-  color: #007bff;
-}
+
+
 

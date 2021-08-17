@@ -1,14 +1,17 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import isEmpty from 'lodash/isEmpty'
+import isEmpty from 'lodash/isEmpty';
+import Button from 'react-bootstrap/Button';
 
-import BookCard from '../components/BookCard'
+import BookCard from '../components/BookCard';
 
-const renderBooksList = (data, query, category, valueSort) => {
+const renderBooksList = (data) => {
   if (isEmpty(data)) {
     return null;
   }
   let { items: books, totalItems } = data;
+
+
   return (
     <>
     <div className="book-result">
@@ -17,9 +20,9 @@ const renderBooksList = (data, query, category, valueSort) => {
       <div className="books-list">
         {books.map(book => <BookCard key={book.id} book={book} />)}
       </div>
-      <div className="button-load"> 
-      <a><span className="button-text"> Load more </span></a>
-      </div>
+      {/* <div className="button-load"> 
+      <Button variant="dark" size="lg">Load more </Button>
+      </div> */}
     </>
   )
 }
@@ -43,7 +46,7 @@ const Books = ({ data, isFetching, query, category, valueSort, error }) => {
 }
 
 const mapStateToProps = (state) => {
-  let { data, isFetching, query, category, valueSort, error } = state.books
+  let { data, isFetching, query, category, valueSort, error} = state.books
   return {
     data,
     isFetching,
