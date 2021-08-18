@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import isEmpty from 'lodash/isEmpty';
-import Button from 'react-bootstrap/Button';
+
 
 import BookCard from '../components/BookCard';
 
@@ -20,9 +20,6 @@ const renderBooksList = (data) => {
       <div className="books-list">
         {books.map(book => <BookCard key={book.id} book={book} />)}
       </div>
-      {/* <div className="button-load"> 
-      <Button variant="dark" size="lg">Load more </Button>
-      </div> */}
     </>
   )
 }
